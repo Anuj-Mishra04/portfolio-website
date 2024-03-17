@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio website</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: pop;
+            src: url(./Fonts/Poppins-Medium.ttf);
+        }
+        
+        .main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: pop;
+            flex-direction: column;
+        }
+        .head{
+            text-align: center;
+        }
+        .head_1{
+            font-size: 30px;
+            font-weight: 600;
+            color: #333;
+        }
+        .head_1 span{
+            color: #ff4732;
+        }
+        .head_2{
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-top: 3px;
+        }
+        ul{
+            display: flex;
+            margin-top: 80px;
+        }
+        ul li{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        ul li .icon{
+            font-size: 35px;
+            color: #ff4732;
+            margin: 0 60px;
+        }
+        ul li .text{
+            font-size: 14px;
+            font-weight: 600;
+            color: #ff4732;
+        }
+        
+        /* Progress Div Css  */
+        
+        ul li .progress{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(68, 68, 68, 0.781);
+            margin: 14px 0;
+            display: grid;
+            place-items: center;
+            color: #fff;
+            position: relative;
+            cursor: pointer;
+        }
+        .progress::after{
+            content: " ";
+            position: absolute;
+            width: 125px;
+            height: 5px;
+            background-color: rgba(68, 68, 68, 0.781);
+            right: 30px;
+        }
+        .one::after{
+            width: 0;
+            height: 0;
+        }
+        ul li .progress .uil{
+            display: none;
+        }
+        ul li .progress p{
+            font-size: 13px;
+        }
+        
+        /* Active Css  */
+        
+        ul li .active{
+            background-color: #ff4732;
+            display: grid;
+            place-items: center;
+        }
+        li .active::after{
+            background-color: #ff4732;
+        }
+        ul li .active p{
+            display: none;
+        }
+        ul li .active .uil{
+            font-size: 20px;
+            display: flex;
+        }
+        
+        /* Responsive Css  */
+        
+        @media (max-width: 980px) {
+            ul{
+                flex-direction: column;
+            }
+            ul li{
+                flex-direction: row;
+            }
+            ul li .progress{
+                margin: 0 30px;
+            }
+            .progress::after{
+                width: 5px;
+                height: 55px;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: -1;
+            }
+            .one::after{
+                height: 0;
+            }
+            ul li .icon{
+                margin: 15px 0;
+            }
+        }
+        
+        @media (max-width:600px) {
+            .head .head_1{
+                font-size: 24px;
+            }
+            .head .head_2{
+                font-size: 16px;
+            }
+        }
+        
+            </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Anuj's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="#contacts">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="First">
+            <div class="leftsection">
+                Hi my name is <span class="purple">Anuj Mishra</span>
+                <div>And I am a web developer</div>
+                <span id="element"></span>
+                <div class="button">
+                  
+                    <a href="/web projects/images/resume.pdf" download class="download-btn">
+                        <button class="btn">
+                        Download Resume
+                    </button>
+                    </a>
+                        <a href="https://www.linkedin.com/in/anuj-mishra-81882b166?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                            <button class="btn">
+                            Visit Linkdin
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="rightsection">
+                <img src="main.png" alt="Could not load the image">
+            </div>
+            <hr>
+        </section>
+        <hr>
+    </main>
+    
+      
+    
+    <!-- <div class="container">
+        <div class="left2">
+            <h3 class="heading">Get in Touch!</h3>
+            <p class="text">We are here for you! How can we help you?</p>
+        </div> -->
+    </div>
+    <!-- Setup and start animation! -->
+    <div id="contacts">
+        <div class="contact">
+        
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>GET IN TOUCH</h3>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Email ID" required>
+                <input type="text"id="Phone" placeholder="Phone no.">
+                <textarea id="message" rows="5" placeholder="How can We help You"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        </div>
+
+    <footer>
+        <div class="footer">
+                    <div class="first"><h3>Anuj's Developer portfolio</h3></div>
+                    <div class="second">
+                        <ul>
+                            <li>home</li>
+                            <li>about</li>
+                            <li>contact</li>
+                            <li>services</li>
+                        </ul>
+                    </div>
+                    <div class="third">
+
+                        <ul>
+                            <li>home</li>
+                            <li>about</li>
+                            <li>contact</li>
+                            <li>services</li>
+                        </ul>
+                    </div>
+                     <div class="fourth">
+                        <ul>
+                            <li>home</li>
+                            <li>about</li>
+                            <li>contact</li>
+                            <li>services</li>
+                        </ul>
+                    </div>
+                        </div>
+                        <div class="text-center">
+                           copyright &#169;anujportfolio.com All Rights reserved
+                        </div>
+    </footer>
+    
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail()
+        {
+            Email.send({
+        Host : "smtp.gmail.com",
+        Username : "yashmishra2005ym@gmail.com",
+        Password : "yash93593",
+        To : 'yashmishra2005ym@gmail.com',
+     From : document.getElementById("email").value,
+    Subject : "New Contact form enquiry",
+    Body : "this is body"
+}).then(
+  message => alert(message)
+);
+        }
+    </script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['<i>Game Designer</i>','Web Developer','Student'],
+          typeSpeed: 50,
+        });
+      </script>
+       
+    <script>
+        
+
+        const one = document.querySelector(".one");
+        const two = document.querySelector(".two");
+        const three = document.querySelector(".three");
+        const four = document.querySelector(".four");
+        const five = document.querySelector(".five");
+        const six = document.querySelector(".six");
+        
+        
+        
+        one.onclick = function() {
+            one.classList.add("active");
+            two.classList.remove("active");
+            three.classList.remove("active");
+            four.classList.remove("active");
+            five.classList.remove("active");
+        }
+        
+        two.onclick = function() {
+            one.classList.add("active");
+            two.classList.add("active");
+            three.classList.remove("active");
+            four.classList.remove("active");
+            five.classList.remove("active");
+        }
+        three.onclick = function() {
+            one.classList.add("active");
+            two.classList.add("active");
+            three.classList.add("active");
+            four.classList.remove("active");
+            five.classList.remove("active");
+        }
+        four.onclick = function() {
+            one.classList.add("active");
+            two.classList.add("active");
+            three.classList.add("active");
+            four.classList.add("active");
+            five.classList.remove("active");
+        }
+        five.onclick = function() {
+            one.classList.add("active");
+            two.classList.add("active");
+            three.classList.add("active");
+            four.classList.add("active");
+            five.classList.add("active");
+        }
+        six.onclick=function()
+        {
+            one.classList.add("active");
+            two.classList.remove("active");
+            three.classList.remove("active");
+            four.classList.remove("active");
+            five.classList.remove("active");
+        }
+        
+        </script> 
+</body>
+</html>
